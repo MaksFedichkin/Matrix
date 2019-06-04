@@ -21,21 +21,22 @@ set OUT_BIN_PATH=%OUT_PROJECT_PATH%\bin
 set OUT_JRE_PATH=%OUT_PROJECT_PATH%\jre
 set OUT_LIB_PATH=%OUT_PROJECT_PATH%\lib
 
-set MAIN_JAVA_NAME=Main
+set PACKAGE_NAME=com
+set MAIN_JAVA_NAME=Matrix
 set MAIN_JAVA_PATH=src\%PACKAGE_NAME%\%MAIN_JAVA_NAME%.java
 
 cd /d "%CURRENT_DIR_PATH%"
 
 rmdir /s /q "%OUT_DIR_NAME%" 2>nul
 mkdir "%OUT_PROJECT_PATH%" "%OUT_BIN_PATH%" "%OUT_JRE_PATH%" "%OUT_LIB_PATH%"
-for %%a in (INSTALL LICENSE README.md) do copy /y %%a "%OUT_PROJECT_PATH%" >nul
+for %%a in (INSTALL LICENSE README) do copy /y %%a "%OUT_PROJECT_PATH%" >nul
 
 :: compile
-javac -sourcepath src -encoding UTF-8 "%MAIN_JAVA_PATH%" -d "%OUT_LIB_PATH%"
+javac -sourcepath "src\%PACKAGE_NAME%" -encoding UTF-8 "%MAIN_JAVA_PATH%" -d "%OUT_LIB_PATH%"
 
 :: make jar
 jar cfe "%OUT_LIB_PATH%\%PROJECT_NAME%".jar %MAIN_JAVA_NAME% -C "%OUT_LIB_PATH%" .
-rmdir /s /q 2>nul
+rmdir /s /q "%OUT_LIB_PATH%\%PACKAGE_NAME%" 2>nul
 
 cd /d "%OUT_BIN_PATH%"
 

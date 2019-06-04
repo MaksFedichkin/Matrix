@@ -1,8 +1,8 @@
-package com.company;
+package com;
 
 import java.util.Scanner;
 
-public class Main{
+public class Matrix {
 
     public static void main(String[] args) {
         System.out.print("Введите минимальное значение элемента: ");
@@ -48,13 +48,13 @@ public class Main{
         double[] avg = new double[order];
         double[] avg2 = new double[order];
         //вычисление средних значений строк
-            for (int i = 0; i < matrix.length; i++) {
-                double sred = 0;
-                for (int j = 0; j < matrix[i].length; j++)
-                    sred += matrix[i][j];
-                sred = sred / order;
-                avg[i] = sred;
-                avg2[i] = avg[i];
+        for (int i = 0; i < matrix.length; i++) {
+            double sred = 0;
+            for (int j = 0; j < matrix[i].length; j++)
+                sred += matrix[i][j];
+            sred = sred / order;
+            avg[i] = sred;
+            avg2[i] = avg[i];
         }
         int[][] clone = new int[order][order];
 
@@ -134,24 +134,3 @@ public class Main{
         }
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//Генератор случайных чисел в заданном диапазоне
-    /*public static int randomNumber(double min, double max){
-        double x = (int)(Math.random()*((max-min)+1))+min;
-        return (int) x;
-    }*/
