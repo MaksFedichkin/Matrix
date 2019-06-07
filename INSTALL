@@ -4,6 +4,6 @@
 Команды которые надо выполнить что бы собрать проект
 для сборки запустить скрипт build.bat
 
-Для запуска программы Tetris необходимо установить Java SE Runtime Environment 8u202 который доступен по ссылке https://www.oracle.com/technetwork/java/javase/downloads/jre8-downloads-2133155.html
+Для запуска программы Matrix необходимо установить Java SE Runtime Environment 8u202 который доступен по ссылке https://www.oracle.com/technetwork/java/javase/downloads/jre8-downloads-2133155.html
 
-Для запуска программы использовать скрипт Tetris находящийся в директории Tetris/out/bin
+Для запуска программы использовать скрипт Matrix находящийся в директории Matrix/out/bin
